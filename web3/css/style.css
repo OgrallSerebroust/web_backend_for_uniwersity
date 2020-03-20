@@ -1,0 +1,50 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    background: url("../style/img/1.jpg");
+    color: white;
+    font-size: 14pt;
+    font-family: verdana;
+    text-align: center;
+}
+
+table
+{
+    margin: auto;
+    border-collapse: collapse;
+    border: 2px solid #3F9DD6;
+}
+
+tr, td
+{
+    border: 1px solid #3F9DD6;
+    text-align: center;
+}
+
+.our_text_inputs_in_table, #button_of_confirming_in_our_table, .selections_in_our_table
+{
+    width: 100%;
+    height: 100%;
+}
+
+#our_main_shadow
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+}
+
+#our_site
+{
+    padding-top: 12%;
+}
+
+#biographi_are_in_table
+{
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
