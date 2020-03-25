@@ -98,7 +98,7 @@
                         Сверхспособности:
                     </th>
                     <td colspan="8">
-                        <select class="selections_in_our_table" name="perks">
+                        <select class="selections_in_our_table" name="perks[]">
                             <option value="1">Бессмертие
                             <option value="2">Прохождение сквозь стены
                             <option value="3">Левитация
@@ -119,7 +119,7 @@
                         С контрактом ознакомлен!
                     </th>
                     <td colspan="8">
-                        <input name="confirm" type="checkbox">
+                        <input name="checking_verify" type="checkbox">
                     </td>
                 </tr>
                 <tr>
