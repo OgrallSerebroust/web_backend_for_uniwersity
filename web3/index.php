@@ -1,5 +1,5 @@
 <?
-    include("include/finding_data.php");
+    include("include/settings.php");
 ?>
 
 <html>
