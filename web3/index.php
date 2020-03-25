@@ -1,7 +1,7 @@
 <?
     include("include/settings.php");
 ?>
-
+<!DOCTYPE html>
 <html>
 
 <head lang="ru">
