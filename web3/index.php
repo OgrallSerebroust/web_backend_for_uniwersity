@@ -96,8 +96,8 @@
                         Сверхспособности:
                     </th>
                     <td colspan="8">
-                        <select class="selections_in_our_table" name="perks[]">
-                            <option value="Immortality">Бессмертие
+                        <select class="selections_in_our_table" multiple size="3" name="perks[]">
+                            <option value="Immortality" selected>Бессмертие
                             <option value="Passing">Прохождение сквозь стены
                             <option value="Levitation">Левитация
                         </select>
@@ -121,7 +121,7 @@
                 </tr>
                 <tr>
                     <td colspan="9">
-                        <input id="button_of_confirming_in_our_table" name="confirm" type="submit" value="Отправить">
+                        <input id="button_of_confirming_in_our_table" name="confirm" type="submit" value="Good">
                     </td>
                 </tr>
             </table>
