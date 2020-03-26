@@ -1,6 +1,6 @@
 <?php
     include("include/settings.php");
-    if(($_POST["name"] != '') && ($_POST["email"] != '') && (isset($_POST["birthday"])) && (isset($_POST["sex"])) && (isset($_POST["foots"])) && (isset($_POST["perks"])) && (isset($_POST["biographi"])) && (isset($_POST["checking_verify"])) && (isset($_POST["confirm"])))
+    if(($_POST["name"] != '') && ($_POST["email"] != '') && ($_POST["dirthday"] != 'Год') && (isset($_POST["sex"])) && (isset($_POST["foots"])) && (isset($_POST["perks"])) && (isset($_POST["biographi"])) && (isset($_POST["checking_verify"])) && (isset($_POST["confirm"])))
     {
         $name = htmlspecialchars($_POST["name"]);
         $email = htmlspecialchars($_POST["email"]);
@@ -20,6 +20,10 @@
     else if($_POST["email"] == '')
     {
         echo "Ошибка! Уважаемый пользователь, вы не ввели почту...";
+    }
+    else if($_POST["birthday"] == "Год")
+    {
+        echo "Ошибка! Уважаемый пользователь, вы не выбрали год рождения...";
     }
     else
     {
