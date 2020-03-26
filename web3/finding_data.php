@@ -4,7 +4,7 @@
     {
         try
         {
-            $stmt = $connection->prepare("INSERT INTO for_number_3(name) VALUES(".$_Post['name'].")");
+            $stmt = $connection->prepare("INSERT INTO for_number_3(name) VALUES(".$_POST['name'].")");
             $stmt -> execute(array('name'));
         }
         catch(PDOException $e)
