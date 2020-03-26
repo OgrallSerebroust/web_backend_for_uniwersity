@@ -13,10 +13,7 @@
 
 <body>
     <?php
-        if($_SERVER['REQUEST_METHOD'] == 'GET')
-        {
-            if(!empty($_GET['completed_registration'])) echo '<div>Уважаемый пользователь! Поздравляем, все данный сохранены!</div>';
-        }
+        if(!empty($_GET['completed_registration'])) echo '<div>Уважаемый пользователь! Поздравляем, все данный сохранены!</div>';
     ?>
     <div id="our_main_shadow"></div>
     <div id="our_site">
