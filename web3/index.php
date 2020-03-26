@@ -121,7 +121,7 @@
                 </tr>
                 <tr>
                     <td colspan="9">
-                        <input id="button_of_confirming_in_our_table" name="confirm" type="submit" value="Good">
+                        <input id="button_of_confirming_in_our_table" name="confirm" type="submit" value="Confirm">
                     </td>
                 </tr>
             </table>

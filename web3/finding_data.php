@@ -1,11 +1,13 @@
 <?php
     include("include/settings.php");
-    if(($_POST["name"] != '') && ($_POST["email"] != '') && ($_POST["birthday"] != 'Год') && (isset($_POST["sex"])) && (isset($_POST["foots"])) && ($_POST["biographi"] != '') && ($_POST["checking_verify"] == "on") && ($_POST["confirm"]) == "Good")
+    if(($_POST["name"] != '') && ($_POST["email"] != '') && ($_POST["birthday"] != 'Год') && (isset($_POST["sex"])) && (isset($_POST["foots"])) && ($_POST["biographi"] != '') && ($_POST["checking_verify"] == "on") && ($_POST["confirm"]) == "Confirm")
     {
         $name = htmlspecialchars($_POST["name"]);
         $email = htmlspecialchars($_POST["email"]);
         $array_of_perks = array();
+
         foreach($_POST["perks"] as $j => $number_of_perk_in_the_flow) $array_of_perks[$j] = $number_of_perk_in_the_flow;
+
         $good_type_of_perks_for_database = implode(", ", $array_of_perks);
         echo $_POST["checking_verify"];
         echo $_POST["confirm"];
@@ -31,6 +33,6 @@
     }
     else
     {
-        echo "bad";
+        echo "Ошибка! Уважаемый пользователь, вы не заполнили одно или несколько полей...";
     }
 ?>
