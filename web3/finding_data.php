@@ -4,8 +4,9 @@
     {
         $name = htmlspecialchars($_POST["name"]);
         $email = htmlspecialchars($_POST["email"]);
-        echo $_POST["biographi"];
-        echo $_POST["name"];
+        echo $_POST["checking_verify"];
+        echo $_POST["confirm"];
+        echo $_POST["perks"];
         mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '".$_POST["biographi"]."')");
         mysqli_close($connection);
         echo "Good!";
