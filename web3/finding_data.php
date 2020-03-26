@@ -1,7 +1,13 @@
 <?php
     include("include/settings.php");
 
-    if ($_SERVER['REQUEST_METHOD'] == 'GET') if($_GET['completed_registration'] == "1") echo "Уважаемый пользователь! Поздравляем, все данный сохранены!";
+    if($_SERVER['REQUEST_METHOD'] == 'GET')
+    {
+        if($_GET['completed_registration'] == "1") echo "Уважаемый пользователь! Поздравляем, все данный сохранены!";
+        include('form.php');
+        exit();
+    }
+
     if(($_POST["name"] != '') && ($_POST["email"] != '') && ($_POST["birthday"] != 'Год') && (isset($_POST["sex"])) && (isset($_POST["foots"])) && ($_POST["biographi"] != '') && (isset($_POST["checking_verify"])) && ($_POST["confirm"]) == "Confirm")
     {
         $name = htmlspecialchars($_POST["name"]);
