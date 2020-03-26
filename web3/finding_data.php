@@ -1,11 +1,5 @@
 <?php
     include("include/settings.php");
-
-    if($_SERVER['REQUEST_METHOD'] == 'GET')
-    {
-        if(!empty($_GET['registration_complete'])) print "Успешно! Поздравляем вас, пользователь, все данные добавлены!";
-    }
-
     if(($_POST["name"] != '') && ($_POST["email"] != '') && ($_POST["birthday"] != 'Год') && (isset($_POST["sex"])) && (isset($_POST["foots"])) && ($_POST["biographi"] != '') && (isset($_POST["checking_verify"])) && ($_POST["confirm"]) == "Confirm")
     {
         $name = htmlspecialchars($_POST["name"]);
@@ -16,7 +10,6 @@
 
         $good_type_of_perks_for_database = implode(", ", $array_of_perks);
         mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
-        header('Location: ?registration_complete = 1');
     }
     else if($_POST["name"] == '')
     {
