@@ -5,7 +5,7 @@
         try
         {
             $name = htmlspecialchars($_POST["name"]);
-            mysql_query("INSERT INTO for_number_3(name) VALUES('".$name."')");
+            mysqli_query("INSERT INTO for_number_3(name) VALUES('".$name."')");
         }
         catch(PDOException $e)
         {
