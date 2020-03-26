@@ -53,13 +53,13 @@
                         Мужской:
                     </td>
                     <td colspan="2">
-                        <input name="sex" type="radio">
+                        <input name="sex" type="radio" value="man">
                     </td>
                     <td colspan="2">
                         Женский:
                     </td>
                     <td colspan="2">
-                        <input name="sex" type="radio">
+                        <input name="sex" type="radio" value="woman">
                     </td>
                 </tr>
                 <tr>
@@ -70,25 +70,25 @@
                         2
                     </td>
                     <td>
-                        <input name="foots" type="radio">
+                        <input name="foots" type="radio" value="2">
                     </td>
                     <td>
                         4
                     </td>
                     <td>
-                        <input name="foots" type="radio">
+                        <input name="foots" type="radio" value="4">
                     </td>
                     <td>
                         6
                     </td>
                     <td>
-                        <input name="foots" type="radio">
+                        <input name="foots" type="radio" value="6">
                     </td>
                     <td>
                         8
                     </td>
                     <td>
-                        <input name="foots" type="radio">
+                        <input name="foots" type="radio" value="8">
                     </td>
                 </tr>
                 <tr>
@@ -97,9 +97,9 @@
                     </th>
                     <td colspan="8">
                         <select class="selections_in_our_table" name="perks[]">
-                            <option value="1">Бессмертие
-                            <option value="2">Прохождение сквозь стены
-                            <option value="3">Левитация
+                            <option value="Immortality">Бессмертие
+                            <option value="Passing">Прохождение сквозь стены
+                            <option value="Levitation">Левитация
                         </select>
                     </td>
                 </tr>
