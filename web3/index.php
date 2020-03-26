@@ -39,10 +39,9 @@
                     <td colspan="8">
                         <select class="selections_in_our_table" name="birthday">
                             <option selected>Год</option>
-                            <?
-                            for ($i = 1900; $i <= 2020; $i++)
-                                echo '<option>' . $i . '</option>';
-                        ?>
+                            <?php
+                                for($i = 1900; $i <= 2020; $i++) echo '<option>' . $i . '</option>';
+                            ?>
                         </select>
                     </td>
                 </tr>
