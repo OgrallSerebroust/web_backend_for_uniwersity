@@ -3,7 +3,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
-        if($_GET['completed_registration'] == "1") echo "Уважаемый пользователь! Поздравляем, все данный сохранены!";
+        if(!empty($_GET['completed_registration'])) echo "Уважаемый пользователь! Поздравляем, все данный сохранены!";
         include('form.php');
         exit();
     }
