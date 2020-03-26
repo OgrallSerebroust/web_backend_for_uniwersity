@@ -3,9 +3,9 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
-        if(!empty($_GET['completed_registration'])) echo "Уважаемый пользователь! Поздравляем, все данный сохранены!";
         include('index.php');
         exit();
+        if(!empty($_GET['completed_registration'])) echo "Уважаемый пользователь! Поздравляем, все данный сохранены!";
     }
 
     if(($_POST["name"] != '') && ($_POST["email"] != '') && ($_POST["birthday"] != 'Год') && (isset($_POST["sex"])) && (isset($_POST["foots"])) && ($_POST["biographi"] != '') && (isset($_POST["checking_verify"])) && ($_POST["confirm"]) == "Confirm")
