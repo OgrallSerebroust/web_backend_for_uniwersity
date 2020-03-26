@@ -16,7 +16,6 @@
 
         $good_type_of_perks_for_database = implode(", ", $array_of_perks);
         mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
-        mysqli_close($connection);
         header('Location: ?registration_complete = 1');
     }
     else if($_POST["name"] == '')
