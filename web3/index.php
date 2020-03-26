@@ -108,8 +108,8 @@
                         Биография:
                     </th>
                     <td colspan="8">
-                        <textarea id="biographi_are_in_table" name="biographi" value="" required placeholder="Главная информация о вас...">
-                    </textarea>
+                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас...">
+                        </textarea>
                     </td>
                 </tr>
                 <tr>
