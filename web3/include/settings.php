@@ -6,5 +6,4 @@
 	$database_password = "TB5ENmFh";
 	$database_name = "u16428";
 	$db = new PDO("mysql:host=localhost;dbname=u16428", $database_login, $database_password, array(PDO::ATTR_PERSISTENT => true));
-	$select_database = mysql_select_db($database_name, $connection) or die(mysql_error());
 ?>
