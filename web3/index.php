@@ -15,7 +15,6 @@
     <div id="our_main_shadow"></div>
     <div id="our_site">
         <form method="post" action="finding_data.php">
-            <!-------------------------------------------------->
             <table width="50%" height="500">
                 <tr>
                     <th>
