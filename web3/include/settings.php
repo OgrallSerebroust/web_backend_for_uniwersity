@@ -5,5 +5,5 @@
 	$database_login = "u16428";
 	$database_password = "6878969";
 	$database_name = "u16428";
-	$db = new PDO("mysql:host=localhost;dbname=u16428", $database_login, $database_password, array(PDO::ATTR_PERSISTENT => true));
+	$connection = new PDO("mysql:host=localhost;dbname=u16428", $database_login, $database_password, array(PDO::ATTR_PERSISTENT => true));
 ?>
