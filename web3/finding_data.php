@@ -3,7 +3,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
-        if(!empty($_GET['completed_registration'])) print "Уважаемый пользователь! Поздравляем, все данный сохранены!";
+        if(!empty($_GET['completed_registration'])) echo "Уважаемый пользователь! Поздравляем, все данный сохранены!";
         include('index.php');
         exit();
     }
