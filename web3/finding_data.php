@@ -9,8 +9,6 @@
         foreach($_POST["perks"] as $j => $number_of_perk_in_the_flow) $array_of_perks[$j] = $number_of_perk_in_the_flow;
 
         $good_type_of_perks_for_database = implode(", ", $array_of_perks);
-        echo $_POST["checking_verify"];
-        echo $_POST["confirm"];
         mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
         mysqli_close($connection);
         echo "Good!";
@@ -30,6 +28,10 @@
     else if($_POST["biographi"] == '')
     {
         echo "Ошибка! Уважаемый пользователь, вы не рассказали ничего о себе...";
+    }
+    else if(!isset($_POST["checking_verify"]))
+    {
+        echo "Ошибка! Уважаемый пользователь, вы не подтвердили ознакомление с контрактом...";
     }
     else
     {
