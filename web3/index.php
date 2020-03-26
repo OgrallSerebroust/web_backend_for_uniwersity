@@ -53,13 +53,13 @@
                         Мужской:
                     </td>
                     <td colspan="2">
-                        <input name="sex" type="radio" value="man">
+                        <input name="sex" type="radio" value="Man">
                     </td>
                     <td colspan="2">
                         Женский:
                     </td>
                     <td colspan="2">
-                        <input name="sex" type="radio" value="woman">
+                        <input name="sex" type="radio" value="Woman">
                     </td>
                 </tr>
                 <tr>
