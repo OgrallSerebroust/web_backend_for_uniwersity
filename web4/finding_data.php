@@ -13,6 +13,22 @@
             $messages[] = "Уважаемый пользователь! Поздравляем, все данные сохранены!";
         }
 
+        $errors['name'] = !empty($_COOKIE['error_of_name']);
+        $errors['email'] = !empty($_COOKIE['error_of_email']);
+        $errors['birthday'] = !empty($_COOKIE['error_of_birthday']);
+        $errors['sex'] = !empty($_COOKIE['error_of_sex']);
+        $errors['foots'] = !empty($_COOKIE['error_of_foots']);
+        $errors['name'] = !empty($_COOKIE['error_of_name']);
+        $errors['perks'] = !empty($_COOKIE['error_of_perks']);
+        $errors['biographi'] = !empty($_COOKIE['error_of_biographi']);
+        $errors['checking_verify'] = !empty($_COOKIE['error_of_checking_verify']);
+
+        if($errors['name'])
+        {
+            setcookie('error_of_name', '');
+            $messages[] = '<div class="error">Уважаемый пользователь, пожалуйста, заполните имя.</div>';
+        }
+
         $values['name'] = empty($_COOKIE['value_of_name']) ? '' : $_COOKIE['value_of_name'];
         include('our_site.php');
     }
