@@ -37,7 +37,7 @@
                         E-mail:
                     </th>
                     <td colspan="8">
-                        <input class="our_text_inputs_in_table" name="email" size="40" maxlength="40" type="text">
+                        <input class="our_text_inputs_in_table" name="email" size="40" maxlength="40" type="text" <?php if($errors['email']) {print 'class="error"';} ?> value="<?php print $values['email']; ?>">
                     </td>
                 </tr>
                 <tr>
@@ -45,8 +45,9 @@
                         Дата рождения:
                     </th>
                     <td colspan="8">
-                        <select class="selections_in_our_table" name="birthday">
+                        <select class="selections_in_our_table" name="birthday" <?php if($errors['birthday']) {print 'class="error"';} ?>>
                             <option selected>Год</option>
+                            <option selected><?php print $values['name']; ?></option>
                             <?php
                                 for($i = 1900; $i <= 2020; $i++) echo '<option>' . $i . '</option>';
                             ?>
@@ -61,7 +62,7 @@
                         Мужской:
                     </td>
                     <td colspan="2">
-                        <input name="sex" type="radio" value="Man">
+                        <input name="sex" type="radio" value="Man" <?php if($values["sex"] == 1) print 'checked'?>>
                     </td>
                     <td colspan="2">
                         Женский:
@@ -116,7 +117,7 @@
                         Биография:
                     </th>
                     <td colspan="8">
-                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас..."></textarea>
+                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас..." <?php if($errors['biographi']) {print 'class="error"';} ?> value="<?php print $values['biographi']; ?>">></textarea>
                     </td>
                 </tr>
                 <tr>
