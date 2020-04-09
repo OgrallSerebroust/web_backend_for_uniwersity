@@ -14,6 +14,12 @@
 <body>
     <div id="our_main_shadow"></div>
     <?php
+        if(!empty($messages))
+        {
+            echo '<div id="messages">';
+            foreach ($messages as $message) echo'('.$message.')';
+            echo '</div>';
+        }
         #if(!empty($_GET['completed_registration'])) echo '<div>Уважаемый пользователь! Поздравляем, все данные сохранены!</div>';
     ?>
     <div id="our_site">
