@@ -15,11 +15,5 @@
         setcookie('saved', '');
         $messages[] = 'Спасибо, результаты сохранены.';
     }
-    if ($errors['name'])
-    {
-        setcookie('error_of_name', '');
-        $messages[] = '<div class="error">Заполните имя.</div>';
-    }
-
     $values['name'] = empty($_COOKIE['value_of_name']) ? '' : $_COOKIE['value_of_name'];
 ?>
