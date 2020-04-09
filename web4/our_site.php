@@ -47,7 +47,7 @@
                     <td colspan="8">
                         <select class="selections_in_our_table" name="birthday" <?php if($errors['birthday']) {print 'class="error"';} ?>>
                             <option selected>Год</option>
-                            <option selected><?php print $values['name']; ?></option>
+                            <option selected><?php print $values['birthday']; ?></option>
                             <?php
                                 for($i = 1900; $i <= 2020; $i++) echo '<option>' . $i . '</option>';
                             ?>
@@ -62,7 +62,7 @@
                         Мужской:
                     </td>
                     <td colspan="2">
-                        <input name="sex" type="radio" value="Man" <?php if($values["sex"] == 1) print 'checked'?>>
+                        <input name="sex" type="radio" value="Man" <?php if($values["sex"] == 1) print 'checked';?>>
                     </td>
                     <td colspan="2">
                         Женский:
