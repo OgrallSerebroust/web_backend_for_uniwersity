@@ -127,7 +127,7 @@
 
         if($errors)
         {
-            header('Location: our_site.php');
+            header('Location: finding_data.php');
             exit();
         }
         else
