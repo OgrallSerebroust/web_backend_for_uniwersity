@@ -19,6 +19,7 @@
         $errors['birthday'] = !empty($_COOKIE['error_of_birthday']);
         $errors['sex'] = !empty($_COOKIE['error_of_sex']);
         $errors['foots'] = !empty($_COOKIE['error_of_foots']);
+        $errors['perks'] = !empty($_COOKIE['error_of_perks']);
         $errors['biographi'] = !empty($_COOKIE['error_of_biographi']);
         $errors['checking_verify'] = !empty($_COOKIE['error_of_checking_verify']);
 
@@ -50,6 +51,12 @@
         {
             setcookie('error_of_foots', '');
             $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не выбрали количество конечностей...</div>';
+        }
+
+        if($errors['perks'])
+        {
+            setcookie('error_of_perks', '');
+            $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, хотя бы одна сверхспособность должна быть выбрана...</div>';
         }
 
         if($errors['biographi'])
@@ -117,7 +124,12 @@
         }
         else setcookie('value_of_foots', $_POST["foots"], time() + 30 * 24 * 60 * 60);
 
-        setcookie('value_of_perks', $_POST["$good_type_of_perks_for_database"], time() + 30 * 24 * 60 * 60);
+        if
+        {
+            setcookie('error_of_perks', 'True', time() + 24 * 60 * 60);
+            $errors = TRUE;
+        }
+        else setcookie('value_of_perks', $_POST[$good_type_of_perks_for_database], time() + 30 * 24 * 60 * 60);
 
         if($_POST["biographi"] == '')
         {
@@ -144,6 +156,7 @@
             setcookie('error_of_birthday', '');
             setcookie('error_of_sex', '');
             setcookie('error_of_foots', '');
+            setcookie('error_of_perks', '');
             setcookie('error_of_biographi', '');
             setcookie('error_of_checking_verify', '');
         }
