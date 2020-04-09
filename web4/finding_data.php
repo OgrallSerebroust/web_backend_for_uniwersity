@@ -13,7 +13,8 @@
         mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
         mysqli_close($connection);
         setcookie('saved', '1');
-        header('Location: index.php?completed_registration=1');
+        #header('Location: index.php?completed_registration=1');
+        header('Location: index.php');
     }
     else if($_POST["name"] == '') echo "Ошибка! Уважаемый пользователь, вы не ввели имя...";
     else if($_POST["email"] == '') echo "Ошибка! Уважаемый пользователь, вы не ввели почту...";
