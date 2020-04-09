@@ -117,7 +117,7 @@
                         Биография:
                     </th>
                     <td colspan="8">
-                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас..." <?php if($errors['biographi']) {print 'class="error"';} ?>><?php print $values['perks'][1]; ?></textarea>
+                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас..." <?php if($errors['biographi']) {print 'class="error"';} ?>><?php print $values['perks']; ?></textarea>
                     </td>
                 </tr>
                 <tr>
