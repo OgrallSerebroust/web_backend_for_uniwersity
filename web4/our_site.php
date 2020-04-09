@@ -62,7 +62,7 @@
                         Мужской:
                     </td>
                     <td colspan="2">
-                        <input name="sex" type="radio" value="Man" <?php if($values["sex"] == "man"){print 'checked';}?>>
+                        <input name="sex" type="radio" value="Man" <?php if($values["sex"] == "Man"){print 'checked';}?>>
                     </td>
                     <td colspan="2">
                         Женский:
@@ -117,7 +117,7 @@
                         Биография:
                     </th>
                     <td colspan="8">
-                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас..." <?php if($errors['biographi']) {print 'class="error"';} ?> value="<?php print $values['biographi']; ?>">></textarea>
+                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас..." <?php if($errors['biographi']) {print 'class="error"';} ?> value="<?php print $values['biographi']; ?>"></textarea>
                     </td>
                 </tr>
                 <tr>
