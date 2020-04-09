@@ -106,9 +106,9 @@
                     </th>
                     <td colspan="8">
                         <select class="selections_in_our_table" multiple size="3" name="perks[]">
-                            <option value="Immortality" selected>Бессмертие
-                            <option value="Passing" <?php if(strpos($values['perks'], "Passing") != false){print 'checked';}?>>Прохождение сквозь стены
-                            <option value="Levitation">Левитация
+                            <option value="Immortality" selected>Бессмертие</option>
+                            <option value="Passing" <?php if(strpos($values['perks'], "Passing") != false){print 'checked';}?>>Прохождение сквозь стены</option>
+                            <option value="Levitation">Левитация</option>
                         </select>
                     </td>
                 </tr>
@@ -117,7 +117,7 @@
                         Биография:
                     </th>
                     <td colspan="8">
-                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас..." <?php if($errors['biographi']) {print 'class="error"';} ?>><?php print $values['perks']; ?></textarea>
+                        <textarea id="biographi_are_in_table" name="biographi" placeholder="Главная информация о вас..." <?php if($errors['biographi']) {print 'class="error"';} ?>><?php print strpos($values['perks'], "Passing"); ?></textarea>
                     </td>
                 </tr>
                 <tr>
