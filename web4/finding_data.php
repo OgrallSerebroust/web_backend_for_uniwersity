@@ -31,7 +31,7 @@
             mysqli_close($connection);
             setcookie('saved', 'true');
             #header('Location: index.php?completed_registration=1');
-            header('Location: index.php');
+            header('Location: finding_data.php');
         }
         else if($_POST["name"] == '') echo "Ошибка! Уважаемый пользователь, вы не ввели имя...";
         else if($_POST["email"] == '') echo "Ошибка! Уважаемый пользователь, вы не ввели почту...";
