@@ -6,6 +6,7 @@
         $messages = array();
         $errors = array();
         $values = array();
+        $errors = FALSE;
 
         if(isset($_COOKIE["saved"]))
         {
@@ -18,7 +19,6 @@
         $errors['birthday'] = !empty($_COOKIE['error_of_birthday']);
         $errors['sex'] = !empty($_COOKIE['error_of_sex']);
         $errors['foots'] = !empty($_COOKIE['error_of_foots']);
-        $errors['name'] = !empty($_COOKIE['error_of_name']);
         $errors['perks'] = !empty($_COOKIE['error_of_perks']);
         $errors['biographi'] = !empty($_COOKIE['error_of_biographi']);
         $errors['checking_verify'] = !empty($_COOKIE['error_of_checking_verify']);
@@ -26,35 +26,132 @@
         if($errors['name'])
         {
             setcookie('error_of_name', '');
-            $messages[] = '<div class="error">Уважаемый пользователь, пожалуйста, заполните имя.</div>';
+            $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не ввели имя...</div>';
+        }
+
+        if($errors['email'])
+        {
+            setcookie('error_of_email', '');
+            $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не ввели почту...</div>';
+        }
+
+        if($errors['birthday'])
+        {
+            setcookie('error_of_birthday', '');
+            $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не выбрали год рождения...</div>';
+        }
+
+        if($errors['sex'])
+        {
+            setcookie('error_of_sex', '');
+            $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не выбрали пол...</div>';
+        }
+
+        if($errors['foots'])
+        {
+            setcookie('error_of_foots', '');
+            $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не выбрали количество конечностей...</div>';
+        }
+
+        if($errors['biographi'])
+        {
+            setcookie('error_of_biographi', '');
+            $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не рассказали ничего о себе...</div>';
+        }
+
+        if($errors['checking_verify'])
+        {
+            setcookie('error_of_checking_verify', '');
+            $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не подтвердили ознакомление с контрактом!</div>';
         }
 
         $values['name'] = empty($_COOKIE['value_of_name']) ? '' : $_COOKIE['value_of_name'];
+        $values['email'] = empty($_COOKIE['value_of_email']) ? '' : $_COOKIE['value_of_email'];
+        $values['birthday'] = empty($_COOKIE['value_of_birthday']) ? '' : $_COOKIE['value_of_birthday'];
+        $values['sex'] = empty($_COOKIE['value_of_sex']) ? '' : $_COOKIE['value_of_sex'];
+        $values['foots'] = empty($_COOKIE['value_of_foots']) ? '' : $_COOKIE['value_of_foots'];
+        $values['perks'] = empty($_COOKIE['value_of_perks']) ? '' : $_COOKIE['value_of_perks'];
+        $values['biographi'] = empty($_COOKIE['value_of_biographi']) ? '' : $_COOKIE['value_of_biographi'];
+        $values['checking_verify'] = empty($_COOKIE['value_of_checking_verify']) ? '' : $_COOKIE['value_of_checking_verify'];
         include('our_site.php');
     }
     else
     {
-        if(($_POST["name"] != '') && ($_POST["email"] != '') && ($_POST["birthday"] != 'Год') && (isset($_POST["sex"])) && (isset($_POST["foots"])) && ($_POST["biographi"] != '') && (isset($_POST["checking_verify"])) && ($_POST["confirm"]) == "Confirm")
+        if(empty($_POST['name']))
         {
-            $name = htmlspecialchars($_POST["name"]);
-            $email = htmlspecialchars($_POST["email"]);
-            $array_of_perks = array();
-
-            foreach($_POST["perks"] as $j => $number_of_perk_in_the_flow) $array_of_perks[$j] = $number_of_perk_in_the_flow;
-
-            $good_type_of_perks_for_database = implode(", ", $array_of_perks);
-            mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
-            mysqli_close($connection);
-            setcookie('saved', 'true');
-            header('Location: finding_data.php');
+            setcookie('error_of_name', 'True', time() + 24 * 60 * 60);
+            $errors = TRUE;
         }
-        else if($_POST["name"] == '') echo "Ошибка! Уважаемый пользователь, вы не ввели имя...";
-        else if($_POST["email"] == '') echo "Ошибка! Уважаемый пользователь, вы не ввели почту...";
-        else if($_POST["birthday"] == "Год") echo "Ошибка! Уважаемый пользователь, вы не выбрали год рождения...";
-        else if($_POST["biographi"] == '') echo "Ошибка! Уважаемый пользователь, вы не рассказали ничего о себе...";
-        else if(!isset($_POST["checking_verify"])) echo "Ошибка! Уважаемый пользователь, вы не подтвердили ознакомление с контрактом!";
-        else echo "Ошибка! Уважаемый пользователь, вы не заполнили одно или несколько полей...";
+        else setcookie('value_of_name', $_POST["name"], time() + 30 * 24 * 60 * 60);
 
+        if(empty($_POST['email']))
+        {
+            setcookie('error_of_email', 'True', time() + 24 * 60 * 60);
+            $errors = TRUE;
+        }
+        else setcookie('value_of_email', $_POST["email"], time() + 30 * 24 * 60 * 60);
+
+        if($_POST["birthday"] == 'Год')
+        {
+            setcookie('error_of_birthday', 'True', time() + 24 * 60 * 60);
+            $errors = TRUE;
+        }
+        else setcookie('value_of_birthday', $_POST["birthday"], time() + 30 * 24 * 60 * 60);
+
+        if(!isset($_POST["sex"]))
+        {
+            setcookie('error_of_sex', 'True', time() + 24 * 60 * 60);
+            $errors = TRUE;
+        }
+        else setcookie('value_of_sex', $_POST["sex"], time() + 30 * 24 * 60 * 60);
+
+        if(!isset($_POST["foots"]))
+        {
+            setcookie('error_of_foots', 'True', time() + 24 * 60 * 60);
+            $errors = TRUE;
+        }
+        else setcookie('value_of_foots', $_POST["foots"], time() + 30 * 24 * 60 * 60);
+
+        if($_POST["biographi"] == '')
+        {
+            setcookie('error_of_biographi', 'True', time() + 24 * 60 * 60);
+            $errors = TRUE;
+        }
+        else setcookie('value_of_biographi', $_POST["biographi"], time() + 30 * 24 * 60 * 60);
+
+        if(!isset($_POST["checking_verify"]))
+        {
+            setcookie('error_of_checking_verify', 'True', time() + 24 * 60 * 60);
+            $errors = TRUE;
+        }
+
+        if($errors)
+        {
+            header('Location: our_site.php');
+            exit();
+        }
+        else
+        {
+            setcookie('error_of_name', '');
+            setcookie('error_of_email', '');
+            setcookie('error_of_birthday', '');
+            setcookie('error_of_sex', '');
+            setcookie('error_of_foots', '');
+            setcookie('error_of_perks', '');
+            setcookie('error_of_biographi', '');
+            setcookie('error_of_checking_verify', '');
+        }
+
+        $name = htmlspecialchars($_POST["name"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $array_of_perks = array();
+
+        foreach($_POST["perks"] as $j => $number_of_perk_in_the_flow) $array_of_perks[$j] = $number_of_perk_in_the_flow;
+
+        $good_type_of_perks_for_database = implode(", ", $array_of_perks);
+        mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
         mysqli_close($connection);
+        setcookie('saved', 'True');
+        header('Location: finding_data.php');
     }
 ?>
