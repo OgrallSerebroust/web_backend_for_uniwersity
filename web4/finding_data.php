@@ -124,7 +124,7 @@
         }
         else setcookie('value_of_foots', $_POST["foots"], time() + 30 * 24 * 60 * 60);
 
-        if
+        if($good_type_of_perks_for_database == '')
         {
             setcookie('error_of_perks', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
