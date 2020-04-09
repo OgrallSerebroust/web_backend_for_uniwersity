@@ -129,7 +129,7 @@
             setcookie('error_of_perks', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
         }
-        else setcookie('value_of_perks', $_POST[$good_type_of_perks_for_database], time() + 30 * 24 * 60 * 60);
+        else setcookie('value_of_perks', $good_type_of_perks_for_database, time() + 30 * 24 * 60 * 60);
 
         if($_POST["biographi"] == '')
         {

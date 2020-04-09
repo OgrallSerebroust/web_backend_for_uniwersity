@@ -68,7 +68,7 @@
                         Женский:
                     </td>
                     <td colspan="2">
-                        <input name="sex" type="radio" value="Woman">
+                        <input name="sex" type="radio" value="Woman" <?php if($values["sex"] == "Woman"){print 'checked';}?>>
                     </td>
                 </tr>
                 <tr>
