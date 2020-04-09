@@ -106,9 +106,9 @@
                     </th>
                     <td colspan="8">
                         <select class="selections_in_our_table" multiple size="3" name="perks[]">
-                            <option value="Immortality" selected>Бессмертие</option>
-                            <option value="Passing" <?php if(strpos($values['perks'], "Passing")){print 'selected';}?>>Прохождение сквозь стены</option>
-                            <option value="Levitation">Левитация</option>
+                            <option value="Immortality" selected <?php if(stripos($values['perks'], "Passing") !== false){print 'selected';}?>>Бессмертие</option>
+                            <option value="Passing" <?php if(stripos($values['perks'], "Passing") !== false){print 'selected';}?>>Прохождение сквозь стены</option>
+                            <option value="Levitation" <?php if(stripos($values['perks'], "Passing") !== false){print 'selected';}?>>Левитация</option>
                         </select>
                     </td>
                 </tr>
