@@ -1,5 +1,17 @@
 <?php
     include("include/settings.php");
+    $messages = array();
+    $errors = array();
+    $values = array();
+
+    if($_COOKIE['saved'] == "true")
+    {
+        setcookie('saved', '');
+        $messages[] = 'Спасибо, результаты сохранены.';
+    }
+
+    $values['name'] = empty($_COOKIE['value_of_name']) ? '' : $_COOKIE['value_of_name'];
+    include('index.php');
 
     if(($_POST["name"] != '') && ($_POST["email"] != '') && ($_POST["birthday"] != 'Год') && (isset($_POST["sex"])) && (isset($_POST["foots"])) && ($_POST["biographi"] != '') && (isset($_POST["checking_verify"])) && ($_POST["confirm"]) == "Confirm")
     {
