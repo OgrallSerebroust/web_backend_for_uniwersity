@@ -14,7 +14,7 @@
 <body>
     <div id="our_main_shadow"></div>
     <?php
-       if (!empty($messages))
+       if(!empty($messages))
        {
            print('<div id="messages">');
            foreach ($messages as $message) print($message);
