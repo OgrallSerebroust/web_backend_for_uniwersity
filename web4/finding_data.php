@@ -7,7 +7,7 @@
         $errors = array();
         $values = array();
 
-        if($_COOKIE['saved'] == "true")
+        if(isset($_COOKIE['saved']))
         {
             setcookie('saved', '');
             $messages[] = 'Спасибо, результаты сохранены.';
