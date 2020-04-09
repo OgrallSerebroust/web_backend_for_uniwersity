@@ -29,7 +29,7 @@
                         Имя:
                     </th>
                     <td colspan="8">
-                        <input class="our_text_inputs_in_table" name="name" size="40" maxlength="40" type="text">
+                        <input class="our_text_inputs_in_table" name="name" size="40" maxlength="40" type="text" <?php if($errors['name']) {print 'class="error"';} ?> value="<?php print $values['name']; ?>">
                     </td>
                 </tr>
                 <tr>
