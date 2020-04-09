@@ -79,7 +79,7 @@
                         2
                     </td>
                     <td>
-                        <input name="foots" type="radio" value="2">
+                        <input name="foots" type="radio" value="2" <?php if($values["foots"] == 2){print 'checked';}?>>
                     </td>
                     <td>
                         4
@@ -107,7 +107,7 @@
                     <td colspan="8">
                         <select class="selections_in_our_table" multiple size="3" name="perks[]">
                             <option value="Immortality" selected>Бессмертие
-                            <option value="Passing">Прохождение сквозь стены
+                            <option value="Passing" >Прохождение сквозь стены
                             <option value="Levitation">Левитация
                         </select>
                     </td>
