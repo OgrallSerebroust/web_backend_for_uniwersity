@@ -20,7 +20,6 @@
             foreach ($messages as $message) print($message);
             print('</div>');
         }
-        #if(!empty($_GET['completed_registration'])) echo '<div>Уважаемый пользователь! Поздравляем, все данные сохранены!</div>';
     ?>
     <div id="our_site">
         <form method="post" action="">

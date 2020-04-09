@@ -7,14 +7,14 @@
         $errors = array();
         $values = array();
 
-        if(isset($_COOKIE['saved']))
+        if(isset($_COOKIE["saved"]))
         {
-            setcookie('saved', '');
-            $messages[] = 'Спасибо, результаты сохранены.';
+            setcookie("saved", '');
+            $messages[] = "Уважаемый пользователь! Поздравляем, все данные сохранены!";
         }
 
         $values['name'] = empty($_COOKIE['value_of_name']) ? '' : $_COOKIE['value_of_name'];
-        include('index.php');
+        include('our_site.php');
     }
     else
     {
@@ -30,7 +30,6 @@
             mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
             mysqli_close($connection);
             setcookie('saved', 'true');
-            #header('Location: index.php?completed_registration=1');
             header('Location: finding_data.php');
         }
         else if($_POST["name"] == '') echo "Ошибка! Уважаемый пользователь, вы не ввели имя...";
