@@ -23,7 +23,7 @@
         #if(!empty($_GET['completed_registration'])) echo '<div>Уважаемый пользователь! Поздравляем, все данные сохранены!</div>';
     ?>
     <div id="our_site">
-        <form method="post" action="finding_data.php">
+        <form method="post" action="">
             <table width="50%" height="500">
                 <tr>
                     <th>
