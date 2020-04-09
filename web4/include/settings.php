@@ -11,7 +11,7 @@
     $values = array();
     if ($_SERVER['REQUEST_METHOD'] == 'GET')
     {
-        if(!empty($_COOKIE['saved']))
+        if($_COOKIE['saved'] == "1")
         {
             setcookie('saved', '');
             $messages[] = 'Спасибо, результаты сохранены.';
