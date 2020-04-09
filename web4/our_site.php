@@ -85,19 +85,19 @@
                         4
                     </td>
                     <td>
-                        <input name="foots" type="radio" value="4">
+                        <input name="foots" type="radio" value="4" <?php if($values["foots"] == 4){print 'checked';}?>>
                     </td>
                     <td>
                         6
                     </td>
                     <td>
-                        <input name="foots" type="radio" value="6">
+                        <input name="foots" type="radio" value="6" <?php if($values["foots"] == 6){print 'checked';}?>>
                     </td>
                     <td>
                         8
                     </td>
                     <td>
-                        <input name="foots" type="radio" value="8">
+                        <input name="foots" type="radio" value="8" <?php if($values["foots"] == 8){print 'checked';}?>>
                     </td>
                 </tr>
                 <tr>
