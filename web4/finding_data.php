@@ -94,49 +94,49 @@
             setcookie('error_of_name', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
         }
-        else setcookie('value_of_name', $_POST["name"], time() + 30 * 24 * 60 * 60);
+        else setcookie('value_of_name', $_POST["name"], time() + 30 * 24 * 60 * 60 * 12);
 
         if(empty($_POST['email']))
         {
             setcookie('error_of_email', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
         }
-        else setcookie('value_of_email', $_POST["email"], time() + 30 * 24 * 60 * 60);
+        else setcookie('value_of_email', $_POST["email"], time() + 30 * 24 * 60 * 60 * 12);
 
         if($_POST["birthday"] == 'Год')
         {
             setcookie('error_of_birthday', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
         }
-        else setcookie('value_of_birthday', $_POST["birthday"], time() + 30 * 24 * 60 * 60);
+        else setcookie('value_of_birthday', $_POST["birthday"], time() + 30 * 24 * 60 * 60 * 12);
 
         if(!isset($_POST["sex"]))
         {
             setcookie('error_of_sex', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
         }
-        else setcookie('value_of_sex', $_POST["sex"], time() + 30 * 24 * 60 * 60);
+        else setcookie('value_of_sex', $_POST["sex"], time() + 30 * 24 * 60 * 60 * 12);
 
         if(!isset($_POST["foots"]))
         {
             setcookie('error_of_foots', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
         }
-        else setcookie('value_of_foots', $_POST["foots"], time() + 30 * 24 * 60 * 60);
+        else setcookie('value_of_foots', $_POST["foots"], time() + 30 * 24 * 60 * 60 * 12);
 
         if($good_type_of_perks_for_database == '')
         {
             setcookie('error_of_perks', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
         }
-        else setcookie('value_of_perks', $good_type_of_perks_for_database, time() + 30 * 24 * 60 * 60);
+        else setcookie('value_of_perks', $good_type_of_perks_for_database, time() + 30 * 24 * 60 * 60 * 12);
 
         if($_POST["biographi"] == '')
         {
             setcookie('error_of_biographi', 'True', time() + 24 * 60 * 60);
             $errors = TRUE;
         }
-        else setcookie('value_of_biographi', $_POST["biographi"], time() + 30 * 24 * 60 * 60);
+        else setcookie('value_of_biographi', $_POST["biographi"], time() + 30 * 24 * 60 * 60 * 12);
 
         if(!isset($_POST["checking_verify"]))
         {
