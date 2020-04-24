@@ -11,7 +11,14 @@
         if(isset($_COOKIE["saved"]))
         {
             setcookie("saved", '');
+            setcookie("login", '');
+            setcookie("password", '');
             $messages[] = "Уважаемый пользователь! Поздравляем, все данные сохранены!";
+
+            if(isset($_COOKIE["password"]))
+            {
+                $messages[] = sprintf("Дорогой пользователь, вы можете <a href = 'login.php'>совершить вход</a> используя логин %s и пароль %s", strip_tags($_COOKIE["login"]), strip_tags($_COOKIE["password"]));
+            }
         }
 
         $errors['name'] = !empty($_COOKIE['error_of_name']);
@@ -71,14 +78,20 @@
             $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не подтвердили ознакомление с контрактом!</div>';
         }
 
-        $values['name'] = empty($_COOKIE['value_of_name']) ? '' : $_COOKIE['value_of_name'];
-        $values['email'] = empty($_COOKIE['value_of_email']) ? '' : $_COOKIE['value_of_email'];
+        $values['name'] = empty($_COOKIE['value_of_name']) ? '' : strip_tags($_COOKIE['value_of_name']);
+        $values['email'] = empty($_COOKIE['value_of_email']) ? '' : strip_tags($_COOKIE['value_of_email']);
         $values['birthday'] = empty($_COOKIE['value_of_birthday']) ? '' : $_COOKIE['value_of_birthday'];
         $values['sex'] = empty($_COOKIE['value_of_sex']) ? '' : $_COOKIE['value_of_sex'];
         $values['foots'] = empty($_COOKIE['value_of_foots']) ? '' : $_COOKIE['value_of_foots'];
         $values['perks'] = empty($_COOKIE['value_of_perks']) ? '' : $_COOKIE['value_of_perks'];
         $values['biographi'] = empty($_COOKIE['value_of_biographi']) ? '' : $_COOKIE['value_of_biographi'];
         $values['checking_verify'] = empty($_COOKIE['value_of_checking_verify']) ? '' : $_COOKIE['value_of_checking_verify'];
+
+        if((empty($errors)) && (isset($_COOKIE[session_name()])) && session_start() && (isset($_SESSION["login"])))
+        {
+            printf("Вход");
+        }
+
         include('our_site.php');
     }
     else
@@ -161,10 +174,25 @@
             setcookie('error_of_checking_verify', '');
         }
 
-        $name = htmlspecialchars($_POST["name"]);
-        $email = htmlspecialchars($_POST["email"]);
-        mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
-        mysqli_close($connection);
+        if((isset($_COOKIE[session_name()])) && session_start() && (isset($_SESSION["login"])))
+        {
+            $name = htmlspecialchars($_POST["name"]);
+            $email = htmlspecialchars($_POST["email"]);
+            mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
+            mysqli_close($connection);
+        }
+        else
+        {
+            $login = "user" . rand() . rand();
+            $password = md5(md5("plotva") . md5(rand()));
+            setcookie("login", $login);
+            setcookie("password", $password);
+            $name = htmlspecialchars($_POST["name"]);
+            $email = htmlspecialchars($_POST["email"]);
+            mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
+            mysqli_close($connection);
+        }
+
         setcookie('saved', 'True');
         header('Location: finding_data.php');
     }
