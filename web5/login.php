@@ -31,8 +31,9 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $php_sosi_ja_tiebia_obmanul = $_POST['login'];
-        $query_for_cheking_trulity = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE login = '.$php_sosi_ja_tiebia_obmanul.'");
+        //$php_sosi_ja_tiebia_obmanul = $_POST['login'];
+        $a = 1;
+        $query_for_cheking_trulity = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE id = '.$a.'");
         $row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity);
         do
         {
