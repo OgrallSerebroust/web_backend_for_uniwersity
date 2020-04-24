@@ -1,7 +1,7 @@
 <?php
     include("include/settings.php");
 
-    if ($_SERVER['REQUEST_METHOD'] == 'GET')
+    if($_SERVER['REQUEST_METHOD'] == 'GET')
     {
         $messages = array();
         $errors = array();
