@@ -21,6 +21,6 @@
     }
     else
     {
-        $_SESSION['login'] = $_POST['login'];
+        $_SESSION['login'] = $_COOKIE['login'];
         header('Location: finding_data.php');
     }
