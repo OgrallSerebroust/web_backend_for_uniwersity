@@ -33,7 +33,7 @@
     {
         $php_sosi_ja_tiebia_obmanul = $_POST['login'];
         echo $php_sosi_ja_tiebia_obmanul;
-        $query_for_cheking_trulity = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE login = 1");
+        $query_for_cheking_trulity = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE login = $php_sosi_ja_tiebia_obmanul");
         $row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity);
         do
         {
