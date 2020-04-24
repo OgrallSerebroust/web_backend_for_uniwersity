@@ -33,7 +33,7 @@
     {
         $query_for_cheking_trulity = mysqli_query($connection, "SELECT * FROM for_number_3");
         //WHERE login = ".$_POST["login"]."
-        $row_with_query_for_cheking_trulity = $row = $query_for_cheking_trulity->fetch_array();
+        $row_with_query_for_cheking_trulity = $row = $query_for_cheking_trulity->fetch_object();
         echo $query_for_cheking_trulity["id"];
         session_start();
         $_SESSION["login"] = $_POST["login"];
