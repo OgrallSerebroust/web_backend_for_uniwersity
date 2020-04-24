@@ -32,7 +32,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $php_sosi_ja_tiebia_obmanul = $_POST['login'];
-        $query_for_cheking_trulity = mysqli_query($connection, 'SELECT * FROM for_number_3 WHERE login = '.mysql_real_escape_string($php_sosi_ja_tiebia_obmanul).'');
+        $query_for_cheking_trulity = mysqli_query($connection, 'SELECT * FROM for_number_3 WHERE login = '.mysqli_real_escape_string($php_sosi_ja_tiebia_obmanul).'');
         $row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity);
         session_start();
         $_SESSION["login"] = $_POST["login"];
