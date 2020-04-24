@@ -4,7 +4,7 @@
 
     if(isset($_SESSION["login"]))
     {
-        header('Location: finding_data.php');
+        header('Location: our_site.php');
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'GET')
@@ -21,6 +21,7 @@
     }
     else
     {
+        printf($_COOKIE['login']);
         $_SESSION['login'] = $_COOKIE['login'];
         header('Location: finding_data.php');
     }
