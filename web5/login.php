@@ -4,7 +4,7 @@
 
     if(isset($_SESSION["login"]))
     {
-        header('Location: our_site.php');
+        header('Location: finding_data.php');
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'GET')
