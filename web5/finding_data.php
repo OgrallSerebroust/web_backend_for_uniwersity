@@ -185,8 +185,8 @@
         {
             $login = "user" . rand() . rand();
             $password = md5(md5("plotva") . md5(rand()));
-            setcookie("login", $login);
-            setcookie("password", $password);
+            setcookie("login", $login, time() + 24 * 60 * 60);
+            setcookie("password", $password, time() + 24 * 60 * 60);
             $name = htmlspecialchars($_POST["name"]);
             $email = htmlspecialchars($_POST["email"]);
             mysqli_query($connection, "INSERT INTO for_number_3(name, login, password, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$login', '$password', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
