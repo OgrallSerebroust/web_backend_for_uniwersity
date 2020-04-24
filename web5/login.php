@@ -23,5 +23,5 @@
     {
         printf($_COOKIE['login']);
         $_SESSION['login'] = $_COOKIE['login'];
-        header('Location: finding_data.php');
+        header('Location: login.php');
     }
