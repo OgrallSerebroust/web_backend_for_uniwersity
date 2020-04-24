@@ -96,6 +96,8 @@
     }
     else
     {
+        $login = htmlspecialchars("user" . rand() . rand());
+        $password = htmlspecialchars(md5(md5("plotva") . md5(rand())));
         $array_of_perks = array();
 
         foreach($_POST["perks"] as $j => $number_of_perk_in_the_flow) $array_of_perks[$j] = $number_of_perk_in_the_flow;
@@ -183,8 +185,6 @@
         }
         else
         {
-            $login = htmlspecialchars("user" . rand() . rand());
-            $password = htmlspecialchars(md5(md5("plotva") . md5(rand())));
             $name = htmlspecialchars($_POST["name"]);
             $email = htmlspecialchars($_POST["email"]);
             mysqli_query($connection, "INSERT INTO for_number_3(name, login, password, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$login', '$password', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
