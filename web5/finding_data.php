@@ -17,7 +17,7 @@
 
             if(isset($_COOKIE["password"]))
             {
-                $messages[] = sprintf("Дорогой пользователь, вы можете <a href = 'login.php'>совершить вход</a> используя логин %s и пароль %s", strip_tags($_COOKIE["login"]), strip_tags($_COOKIE["password"]));
+                $messages[] = sprintf("/nДорогой пользователь, вы можете <a href = 'login.php'>совершить вход</a> используя логин %s и пароль %s", strip_tags($_COOKIE["login"]), strip_tags($_COOKIE["password"]));
             }
         }
 
