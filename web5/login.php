@@ -12,9 +12,9 @@
 ?>
 
 <form action="" method="post">
-  <input name="login" />
-  <input name="password" />
-  <input type="submit" value="Войти" />
+  <input name="login">
+  <input name="password">
+  <input type="submit" value="Войти">
 </form>
 
 <?php
@@ -23,5 +23,7 @@
     {
         printf($_POST['login']);
         $_SESSION['login'] = $_POST['login'];
+        $_SESSION['password'] = $_POST['password'];
+        $_SESSION['uid'] = 3141592;
         header('Location: finding_data.php');
     }
