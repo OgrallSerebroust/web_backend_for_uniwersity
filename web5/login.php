@@ -29,6 +29,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         session_start();
+        echo $_POST["login"];
         $_SESSION["login"] = $_POST["login"];
         $_SESSION["password"] = $_POST["password"];
     }
