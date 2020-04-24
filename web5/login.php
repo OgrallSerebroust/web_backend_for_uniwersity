@@ -13,7 +13,7 @@
 
 <form action="" method="post">
   <input name="login" />
-  <input name="pass" />
+  <input name="password" />
   <input type="submit" value="Войти" />
 </form>
 
@@ -21,7 +21,7 @@
     }
     else
     {
-        printf($_COOKIE['login']);
+        printf($_POST['login']);
         $_SESSION['login'] = $_POST['login'];
-        header('Location: login.php');
+        header('Location: finding_data.php');
     }
