@@ -22,6 +22,6 @@
     else
     {
         printf($_COOKIE['login']);
-        $_SESSION['login'] = $_COOKIE['login'];
+        $_SESSION['login'] = $_POST['login'];
         header('Location: login.php');
     }
