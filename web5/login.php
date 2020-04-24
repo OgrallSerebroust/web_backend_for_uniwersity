@@ -37,7 +37,7 @@
         $row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity);
         do
         {
-            echo $row_with_query_for_cheking_trulity;
+            echo $row_with_query_for_cheking_trulity["login"];
         }
         while($row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity));
         session_start();
