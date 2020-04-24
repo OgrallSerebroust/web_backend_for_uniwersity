@@ -1,6 +1,7 @@
-<?
+<?php
     include("include/settings.php");
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -23,3 +24,12 @@
 </body>
 
 </html>
+
+<?php
+    if($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        session_start();
+        $_SESSION["login"] = $_POST["login"];
+        $_SESSION["password"] = $_POST["password"];
+    }
+?>
