@@ -32,8 +32,13 @@
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $php_sosi_ja_tiebia_obmanul = $_POST['login'];
-        $query_for_cheking_trulity = mysqli_query($connection, 'SELECT * FROM for_number_3 WHERE login = $php_sosi_ja_tiebia_obmanul');
+        $query_for_cheking_trulity = mysqli_query($connection, "SELECT * FROM for_number_3");
         $row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity);
+        do
+        {
+            echo $row_with_query_for_cheking_trulity["login"];
+        }
+        while($row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity));
         session_start();
         $_SESSION["login"] = $_POST["login"];
         $_SESSION["password"] = $_POST["password"];
