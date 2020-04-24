@@ -176,19 +176,16 @@
             setcookie('error_of_checking_verify', '');
         }
 
-        if((isset($_COOKIE[session_name()])) && session_start() && (isset($_SESSION["login"])))
-        {
-            $name = htmlspecialchars($_POST["name"]);
-            $email = htmlspecialchars($_POST["email"]);
-            mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
-            mysqli_close($connection);
-        }
-        else
-        {
-            $name = htmlspecialchars($_POST["name"]);
-            $email = htmlspecialchars($_POST["email"]);
-            mysqli_query($connection, "INSERT INTO for_number_3(name, login, password, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$login', '$password', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
-        }
+        //if((isset($_COOKIE[session_name()])) && session_start() && (isset($_SESSION["login"])))
+        //{
+            //$name = htmlspecialchars($_POST["name"]);
+            //$email = htmlspecialchars($_POST["email"]);
+            //mysqli_query($connection, "INSERT INTO for_number_3(name, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
+            //mysqli_close($connection);
+        //}
+        $name = htmlspecialchars($_POST["name"]);
+        $email = htmlspecialchars($_POST["email"]);
+        mysqli_query($connection, "INSERT INTO for_number_3(name, login, password, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$login', '$password', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
         setcookie("login", $login);
         setcookie("password", $password);
         setcookie('saved', 'True');
