@@ -1,29 +1,25 @@
-<?php
+<?
     include("include/settings.php");
-    session_start();
-
-    if(isset($_SESSION["login"]))
-    {
-        header('Location: finding_data.php');
-    }
-
-    if($_SERVER['REQUEST_METHOD'] == 'GET')
-    {
 ?>
+<!DOCTYPE html>
+<html>
 
-<form action="" method="post">
-  <input name="login">
-  <input name="password">
-  <input type="submit" value="Войти">
-</form>
+<head lang="ru">
+    <title>
+        Форма для Веб-сервера
+    </title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
 
-<?php
-    }
-    else
-    {
-        printf($_POST['login']);
-        $_SESSION['login'] = $_POST['login'];
-        $_SESSION['password'] = $_POST['password'];
-        $_SESSION['uid'] = 3141592;
-        header('Location: finding_data.php');
-    }
+<body>
+    <div id="our_main_shadow"></div>
+    <div id="our_site">
+        <form action="" method="post">
+            <input name="login" value="<?php print $_COOKIE["login"]?>">
+            <input name="password" value="<?php print $_COOKIE["password"]?>">
+            <input type="submit" value="Войти">
+        </form>
+    </div>
+</body>
+
+</html>
