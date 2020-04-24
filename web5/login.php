@@ -33,7 +33,7 @@
     {
         $query_for_cheking_trulity = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE login = ".$_POST["login"]." and password = ".$_POST["password"]."");
         $row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity);
-        echo $row_with_query_for_cheking_trulity["login"];
+        echo $row_with_query_for_cheking_trulity;
         session_start();
         $_SESSION["login"] = $_POST["login"];
         $_SESSION["password"] = $_POST["password"];
