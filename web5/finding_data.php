@@ -166,7 +166,7 @@
             setcookie('error_of_checking_verify', '');
         }
 
-        $login = htmlspecialchars("user" . rand());
+        $login = htmlspecialchars("user" . rand() .rand());
         $password = htmlspecialchars(md5(md5("plotva") . md5(rand())));
         $name = htmlspecialchars($_POST["name"]);
         $email = htmlspecialchars($_POST["email"]);
