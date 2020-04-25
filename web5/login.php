@@ -42,7 +42,7 @@
             $_SESSION["password"] = $obman_php_second;
             $_SESSION['uid'] = 3141592;
             session_start();
-            include('our_site.php');
+            header("Location: finding_data.php");
         }
         else
         {
