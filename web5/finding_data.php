@@ -85,13 +85,13 @@
         $values['biographi'] = empty($_COOKIE['value_of_biographi']) ? '' : $_COOKIE['value_of_biographi'];
         $values['checking_verify'] = empty($_COOKIE['value_of_checking_verify']) ? '' : $_COOKIE['value_of_checking_verify'];
 
-        if(empty($errors) && (isset($_SESSION["login"])) && session_start())
+        if(empty($errors) && (isset($_SESSION["login"])))
         {
             $query_for_loading_users_information = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE login = '".$_SESSION["login"]."'");
             $row_with_query_for_loading_users_information = mysqli_fetch_array($query_for_loading_users_information);
             $values["name"] = $row_with_query_for_loading_users_information["name"];
         }
-        if(isset($_SESSION['uid']) && session_start()) printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
+        if(isset($_SESSION['uid'])) printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
         include('our_site.php');
     }
     else
