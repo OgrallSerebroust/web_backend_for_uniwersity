@@ -8,6 +8,13 @@
         $values = array();
         $errors = FALSE;
 
+        if(isset($_COOKIE["quit"]))
+        {
+            setcookie("quit", '');
+            $messages[] = '';
+            $values["name"] = '';
+        }
+
         if(isset($_COOKIE["saved"]))
         {
             setcookie("saved", '');
