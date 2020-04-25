@@ -26,6 +26,12 @@
             }
         }
 
+        if(isset($_COOKIE["changed"]))
+        {
+            setcookie("changed", '');
+            $messages[] = "Уважаемый пользователь! Ваши данные изменены!";
+        }
+
         $errors['name'] = !empty($_COOKIE['error_of_name']);
         $errors['email'] = !empty($_COOKIE['error_of_email']);
         $errors['birthday'] = !empty($_COOKIE['error_of_birthday']);
