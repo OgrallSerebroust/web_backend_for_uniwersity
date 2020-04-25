@@ -42,7 +42,8 @@
             $_SESSION["login"] = $php_ja_tiebia_obmanul;
             $_SESSION["password"] = $obman_php_second;
             $_SESSION['uid'] = 3141592;
-            header("Location: finding_data.php");
+            if(isset($_SESSION['uid'])) printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
+            //header("Location: finding_data.php");
         }
         else
         {
