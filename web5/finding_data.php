@@ -7,6 +7,7 @@
         $errors = array();
         $values = array();
         $errors = FALSE;
+        echo $_SESSION["login"];
 
         if(isset($_COOKIE["saved"]))
         {
