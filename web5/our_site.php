@@ -22,6 +22,18 @@
         }
     ?>
     <div id="our_site">
+        <div>
+            <div>
+                <a href="login.php">
+                    Вход
+                </a>
+            </div>
+            <div>
+                <a>
+                    Выход
+                </a>
+            </div>
+        </div>
         <form method="post" action="">
             <table width="50%" height="500">
                 <tr>

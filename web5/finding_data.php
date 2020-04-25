@@ -76,7 +76,7 @@
             $messages[] = '<div class="error">Ошибка! Уважаемый пользователь, вы не подтвердили ознакомление с контрактом!</div>';
         }
 
-        #$values['name'] = empty($_COOKIE['value_of_name']) ? '' : strip_tags($_COOKIE['value_of_name']);
+        $values['name'] = empty($_COOKIE['value_of_name']) ? '' : strip_tags($_COOKIE['value_of_name']);
         $values['email'] = empty($_COOKIE['value_of_email']) ? '' : strip_tags($_COOKIE['value_of_email']);
         $values['birthday'] = empty($_COOKIE['value_of_birthday']) ? '' : $_COOKIE['value_of_birthday'];
         $values['sex'] = empty($_COOKIE['value_of_sex']) ? '' : $_COOKIE['value_of_sex'];
