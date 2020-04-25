@@ -11,7 +11,7 @@
         if(isset($_COOKIE["quit"]))
         {
             setcookie("quit", '');
-            $messages = '';
+            $messages = array();
             $values["name"] = '';
         }
 
