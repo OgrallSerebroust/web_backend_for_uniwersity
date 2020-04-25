@@ -95,7 +95,7 @@
         }
 
         include('our_site.php');
-        if(isset($_SESSION['uid'])) printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
+        printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
     }
     else
     {
