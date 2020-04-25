@@ -85,7 +85,7 @@
         $values['biographi'] = empty($_COOKIE['value_of_biographi']) ? '' : $_COOKIE['value_of_biographi'];
         $values['checking_verify'] = empty($_COOKIE['value_of_checking_verify']) ? '' : $_COOKIE['value_of_checking_verify'];
 
-        if(session_start()) printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
+        if(isset($_SESSION['uid'])) printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
 
         if(empty($errors) && (isset($_COOKIE[session_name()])) && session_start() && (isset($_SESSION["login"])))
         {
