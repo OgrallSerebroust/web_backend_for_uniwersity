@@ -31,16 +31,21 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        $php_sosi_ja_tiebia_obmanul = $_POST['login'];
+        $php_ja_tiebia_obmanul = $_POST['login'];
+        $obman_php_second = $_POST["password"];
         $query_for_cheking_trulity = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE login = '".$php_sosi_ja_tiebia_obmanul."'");
         $row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity);
-        do
+
+        if($obman_php_second == $row_with_query_for_cheking_trulity["password"])
         {
-            echo $row_with_query_for_cheking_trulity["login"];
+            session_start();
+            $_SESSION["login"] = $php_ja_tiebia_obmanul;
+            $_SESSION["password"] = $obman_php_second;
+            header("Location: finding_data.php");
         }
-        while($row_with_query_for_cheking_trulity = mysqli_fetch_array($query_for_cheking_trulity));
-        session_start();
-        $_SESSION["login"] = $_POST["login"];
-        $_SESSION["password"] = $_POST["password"];
+        else
+        {
+            echo "Неправильный логин или пароль...";
+        }
     }
 ?>
