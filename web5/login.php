@@ -42,7 +42,7 @@
             $_SESSION["login"] = $php_ja_tiebia_obmanul;
             $_SESSION["password"] = $obman_php_second;
             $_SESSION['uid'] = 3141592;
-            header("Location: web_backend_for_uniwersity/web5/finding_data.php/");
+            header("Location: /web_backend_for_uniwersity/web5/finding_data.php/");
         }
         else
         {
