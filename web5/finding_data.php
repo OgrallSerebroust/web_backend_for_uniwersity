@@ -192,7 +192,9 @@
         {
             $name = htmlspecialchars($_POST["name"]);
             $email = htmlspecialchars($_POST["email"]);
-            mysqli_query($connection, "UPDATE for_number_3 SET name = '$name', email = '$email', birthday = '".$_POST["birthday"]."', sex = '".$_POST["sex"]."', foots = '".$_POST["foots"]."', perks = '$good_type_of_perks_for_database', biographi = '".$_POST["biographi"]."'");
+            mysqli_query($connection, "UPDATE for_number_3 SET name = '$name', email = '$email', birthday = '".$_POST["birthday"]."', sex = '".$_POST["sex"]."', foots = '".$_POST["foots"]."', perks = '$good_type_of_perks_for_database', biographi = '".$_POST["biographi"]."' WHERE login = '".$_SESSION["login"]."'");
+            setcookie("changed", "True");
+            header('Location: finding_data.php');
         }
         else
         {
