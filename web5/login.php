@@ -42,7 +42,7 @@
             $_SESSION["password"] = $obman_php_second;
             $_SESSION['uid'] = 3141592;
             session_start();
-            header("Location: /web_backend_for_uniwersity/web5/finding_data.php");
+            header("Location: ./");
         }
         else
         {
