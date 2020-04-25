@@ -10,7 +10,7 @@
 
         if(isset($_COOKIE["quit"]))
         {
-            setcookie("quit", '');
+            //setcookie("quit", '');
             $messages[] = '';
             $values["name"] = '';
         }
