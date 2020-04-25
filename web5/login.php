@@ -41,6 +41,7 @@
             session_start();
             $_SESSION["login"] = $php_ja_tiebia_obmanul;
             $_SESSION["password"] = $obman_php_second;
+            $_SESSION['uid'] = 3141592;
             header("Location: finding_data.php");
         }
         else
