@@ -93,9 +93,8 @@
             $row_with_query_for_loading_users_information = mysqli_fetch_array($query_for_loading_users_information);
             $values["name"] = $row_with_query_for_loading_users_information["name"];
         }
-
-        include('our_site.php');
         printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
+        include('our_site.php');
     }
     else
     {
