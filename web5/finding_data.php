@@ -90,7 +90,7 @@
             $query_for_loading_users_information = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE login = '".$_SESSION["login"]."'");
             $row_with_query_for_loading_users_information = mysqli_fetch_array($query_for_loading_users_information);
             $values["name"] = $row_with_query_for_loading_users_information["name"];
-            printf("%s", $values["name"]);
+            printf("%s", $_SESSION["login"]);
         }
 
         include('our_site.php');
