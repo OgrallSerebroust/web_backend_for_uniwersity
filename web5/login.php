@@ -43,9 +43,6 @@
             $_SESSION['uid'] = 3141592;
             header("Location: finding_data.php");
         }
-        else
-        {
-            echo "Неправильный логин или пароль...";
-        }
+        else echo "Неправильный логин или пароль...";
     }
 ?>

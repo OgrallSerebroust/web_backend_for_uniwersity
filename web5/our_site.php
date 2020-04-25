@@ -1,6 +1,7 @@
 <?
     include("include/settings.php");
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -13,6 +14,7 @@
 
 <body>
     <div id="our_main_shadow"></div>
+
     <?php
         if(!empty($messages))
         {
@@ -21,6 +23,7 @@
             print('</div>');
         }
     ?>
+
     <div id="our_site">
         <div>
             <div>
