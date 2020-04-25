@@ -7,7 +7,6 @@
         $errors = array();
         $values = array();
         $errors = FALSE;
-        echo $_SESSION["login"];
 
         if(isset($_COOKIE["saved"]))
         {
@@ -85,6 +84,12 @@
         $values['perks'] = empty($_COOKIE['value_of_perks']) ? '' : $_COOKIE['value_of_perks'];
         $values['biographi'] = empty($_COOKIE['value_of_biographi']) ? '' : $_COOKIE['value_of_biographi'];
         $values['checking_verify'] = empty($_COOKIE['value_of_checking_verify']) ? '' : $_COOKIE['value_of_checking_verify'];
+
+        if(empty($errors) && (isset($_COOKIE[session_name()])) && session_start() && (isset($_SESSION["login"])))
+        {
+            echo "Hello";
+        }
+
         include('our_site.php');
     }
     else
