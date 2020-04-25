@@ -87,11 +87,11 @@
 
         if((isset($_SESSION["login"])) && (isset($_SESSION["uid"])))
         {
-            $a = printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
-            echo '<div>'.$a.'</div>';
+            $messages[] = printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
             $query_for_loading_users_information = mysqli_query($connection, "SELECT * FROM for_number_3 WHERE login = '".$_SESSION["login"]."'");
             $row_with_query_for_loading_users_information = mysqli_fetch_array($query_for_loading_users_information);
             $values["name"] = $row_with_query_for_loading_users_information["name"];
+            $values["email"] = $row_with_query_for_loading_users_information["email"];
         }
 
         include('our_site.php');
