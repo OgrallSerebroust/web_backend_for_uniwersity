@@ -188,14 +188,23 @@
             setcookie('error_of_checking_verify', '');
         }
 
-        $login = "user" . rand();
-        $password = md5(md5("plotva") . md5(rand()));
-        $name = htmlspecialchars($_POST["name"]);
-        $email = htmlspecialchars($_POST["email"]);
-        mysqli_query($connection, "INSERT INTO for_number_3(name, login, password, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$login', '$password', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
-        setcookie("login", $login);
-        setcookie("password", $password);
-        setcookie('saved', 'True');
-        header('Location: finding_data.php');
+        if((isset($_SESSION["login"])) && (isset($_SESSION["uid"])))
+        {
+            $name = htmlspecialchars($_POST["name"]);
+            $email = htmlspecialchars($_POST["email"]);
+            mysqli_query($connection, "UPDATE for_number_3 SET name = '$name', email = '$email', birthday = '".$_POST["birthday"]."', sex = '".$_POST["sex"]."', foots = '".$_POST["foots"]."', perks = '$good_type_of_perks_for_database', biographi = '".$_POST["biographi"]."'");
+        }
+        else
+        {
+            $login = "user" . rand();
+            $password = md5(md5("plotva") . md5(rand()));
+            $name = htmlspecialchars($_POST["name"]);
+            $email = htmlspecialchars($_POST["email"]);
+            mysqli_query($connection, "INSERT INTO for_number_3(name, login, password, email, birthday, sex, foots, perks, biographi) VALUES('$name', '$login', '$password', '$email', '".$_POST["birthday"]."', '".$_POST["sex"]."', '".$_POST["foots"]."', '$good_type_of_perks_for_database', '".$_POST["biographi"]."')");
+            setcookie("login", $login);
+            setcookie("password", $password);
+            setcookie('saved', 'True');
+            header('Location: finding_data.php');
+        }
     }
 ?>
