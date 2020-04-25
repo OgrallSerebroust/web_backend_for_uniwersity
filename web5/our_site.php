@@ -29,7 +29,7 @@
                 </a>
             </div>
             <div>
-                <a>
+                <a href="quit.php">
                     Выход
                 </a>
             </div>
