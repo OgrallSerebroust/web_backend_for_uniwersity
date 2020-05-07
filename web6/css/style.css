@@ -4,3 +4,11 @@ body
     margin: 0;
     background: url("../resources/main/1.jpg");
 }
+
+#main_part_of_our_site
+{
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
