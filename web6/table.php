@@ -19,7 +19,8 @@
             <?php
             echo "<div>Вы успешно авторизовались и видите защищённые паролем данные.</div>";?>
             <table>
-                <tbody>
+                <form action="" method="post">
+                    <tbody>
                     <tr>
                         <th>
                             ID пользователя
@@ -53,12 +54,13 @@
                         </th>
                     </tr>
                     <?php
-                        do
-                        {
-                            echo "<tr><td>".$array_with_query_with_all_information['id']."</td><td>".$array_with_query_with_all_information['name']."</td><td>".$array_with_query_with_all_information['login']."</td><td>".$array_with_query_with_all_information['password']."</td><td>".$array_with_query_with_all_information['email']."</td><td>".$array_with_query_with_all_information['birthday']."</td><td>".$array_with_query_with_all_information['sex']."</td><td>".$array_with_query_with_all_information['foots']."</td><td>".$array_with_query_with_all_information['perks']."</td><td>".$array_with_query_with_all_information['biographi']."</td></tr>";
-                        }
-                        while($array_with_query_with_all_information = mysqli_fetch_array($query_with_all_information));?>
-                </tbody>
+                    do
+                    {
+                        echo "<tr><td>".$array_with_query_with_all_information['id']."</td><td>".$array_with_query_with_all_information['name']."</td><td>".$array_with_query_with_all_information['login']."</td><td>".$array_with_query_with_all_information['password']."</td><td>".$array_with_query_with_all_information['email']."</td><td>".$array_with_query_with_all_information['birthday']."</td><td>".$array_with_query_with_all_information['sex']."</td><td>".$array_with_query_with_all_information['foots']."</td><td>".$array_with_query_with_all_information['perks']."</td><td>".$array_with_query_with_all_information['biographi']."</td><td><input type='submit' value='Удалить'></td></tr>";
+                    }
+                    while($array_with_query_with_all_information = mysqli_fetch_array($query_with_all_information));?>
+                    </tbody>
+                </form>
             </table>
         </div>
     </body>
