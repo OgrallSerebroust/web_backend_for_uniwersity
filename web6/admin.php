@@ -3,7 +3,7 @@
     {
         header("HTTP/1.1 401 Unauthorized");
         header("WWW-Authenticate: Basic realm='My realm'");
-        print("<h1>401 Требуется авторизация</h1>>");
+        print("<h1>401 Требуется авторизация</h1>");
         exit();
     }
 
