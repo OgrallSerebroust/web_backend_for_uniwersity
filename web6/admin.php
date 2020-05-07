@@ -1,5 +1,5 @@
 <?php
-    if((empty($_SERVER["PHP_AUTH_USER"])) || (empty($_SERVER["PHP_AUTH_PW"])))
+    if((empty($_SERVER["PHP_AUTH_USER"])) || (empty($_SERVER["PHP_AUTH_PW"])) || ($_SERVER["PHP_AUTH_USER"] != "admin"))
     {
         header("WWW-Authenticate: Basic realm='My realm'");
         header("HTTP/1.1 401 Unauthorized");
