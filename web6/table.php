@@ -16,6 +16,8 @@
     </head>
     <body>
         <div id="main_part_of_our_site">
+            <?php
+            echo "<div>Вы успешно авторизовались и видите защищённые паролем данные.</div>";?>
             <table>
                 <tbody>
                     <tr>
