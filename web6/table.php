@@ -24,7 +24,7 @@
             <?php
                 do
                 {
-                    echo "<tr><td>".$array_with_query_with_all_information['id']."</td><td>".$array_with_query_with_all_information['name']."</td><td>".$array_with_query_with_all_information["password"]."</td></tr>";
+                    echo "<tr><td>".$array_with_query_with_all_information['id']."</td><td>".$array_with_query_with_all_information['name']."</td><td>".$array_with_query_with_all_information['password']."</td><td>".$array_with_query_with_all_information['login']."</td></tr>";
                 }
                 while($array_with_query_with_all_information = mysqli_fetch_array($query_with_all_information));?>
         </tbody>
