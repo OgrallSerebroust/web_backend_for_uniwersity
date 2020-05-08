@@ -11,7 +11,7 @@
     {
         if(isset($_POST["delete"]))
         {
-            $id_of_user_for_deleting = substr($_POST["delete"], 35);
+            $id_of_user_for_deleting = substr($_POST["delete"], 40);
             echo $id_of_user_for_deleting;
             mysqli_query($connection, "DELETE FROM for_number_3 WHERE id = '".$id_of_user_for_deleting."'");
             //header("Refresh:0");
