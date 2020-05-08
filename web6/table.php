@@ -7,12 +7,14 @@
     $query_with_all_information = mysqli_query($connection, "SELECT * FROM for_number_3");
     $array_with_query_with_all_information = mysqli_fetch_array($query_with_all_information);
 
-    if(isset($_POST["delete"]))
+    if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        echo $_POST["number_of_user"];
-        $id_of_user_for_deleting = $_POST["number_of_user"];
-        mysqli_query($connection, "DELETE FROM for_number_3 WHERE id = '.$id_of_user_for_deleting.'");
-
+        if(isset($_POST["delete"]))
+        {
+            echo $_POST["number_of_user"];
+            $id_of_user_for_deleting = $_POST["number_of_user"];
+            mysqli_query($connection, "DELETE FROM for_number_3 WHERE id = '.$id_of_user_for_deleting.'");
+        }
     }?>
 
 <html>
