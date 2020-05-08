@@ -22,6 +22,11 @@ tr, td
     text-align: center;
 }
 
+.special_messages
+{
+    padding-top: 1%;
+}
+
 #main_part_of_our_site
 {
     background-color: rgba(0, 0, 0, 0.9);
