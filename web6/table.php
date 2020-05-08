@@ -11,8 +11,8 @@
     {
         if(isset($_POST["delete"]))
         {
-            echo $_POST["number_of_user"];
-            $id_of_user_for_deleting = $_POST["number_of_user"];
+            echo $_POST["delete"];
+            $id_of_user_for_deleting = $_POST["delete"];
             mysqli_query($connection, "DELETE FROM for_number_3 WHERE id = '.$id_of_user_for_deleting.'");
         }
     }?>
@@ -70,7 +70,7 @@
                     do
                     {
                         $string_for_button = 'Удалить пользователя' . $array_with_query_with_all_information['id'];
-                        echo "<tr><td>".$array_with_query_with_all_information['id']."</td><td>".$array_with_query_with_all_information['name']."</td><td>".$array_with_query_with_all_information['login']."</td><td>".$array_with_query_with_all_information['password']."</td><td>".$array_with_query_with_all_information['email']."</td><td>".$array_with_query_with_all_information['birthday']."</td><td>".$array_with_query_with_all_information['sex']."</td><td>".$array_with_query_with_all_information['foots']."</td><td>".$array_with_query_with_all_information['perks']."</td><td>".$array_with_query_with_all_information['biographi']."</td><td><input type='hidden' name='number_of_user' value='".$array_with_query_with_all_information['id']."'><input type='submit' name='delete' value='".$string_for_button."'></td></tr>";
+                        echo "<tr><td>".$array_with_query_with_all_information['id']."</td><td>".$array_with_query_with_all_information['name']."</td><td>".$array_with_query_with_all_information['login']."</td><td>".$array_with_query_with_all_information['password']."</td><td>".$array_with_query_with_all_information['email']."</td><td>".$array_with_query_with_all_information['birthday']."</td><td>".$array_with_query_with_all_information['sex']."</td><td>".$array_with_query_with_all_information['foots']."</td><td>".$array_with_query_with_all_information['perks']."</td><td>".$array_with_query_with_all_information['biographi']."</td><td><input type='submit' name='delete' value='".$string_for_button."'></td></tr>";
                     }
                     while($array_with_query_with_all_information = mysqli_fetch_array($query_with_all_information));?>
                     </tbody>
