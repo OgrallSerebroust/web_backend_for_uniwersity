@@ -9,8 +9,10 @@
 
     if(isset($_POST["delete"]))
     {
-        echo"Good!";
         echo $_POST["number_of_user"];
+        $id_of_user_for_deleting = $_POST["number_of_user"];
+        mysqli_query($connection, "DELETE FROM for_number_3 WHERE id = '.$id_of_user_for_deleting.'");
+
     }?>
 
 <html>
@@ -63,11 +65,9 @@
                         </th>
                     </tr>
                     <?php
-                    $number_of_user = 1;
-
                     do
                     {
-                        echo "<tr><td>".$array_with_query_with_all_information['id']."</td><td>".$array_with_query_with_all_information['name']."</td><td>".$array_with_query_with_all_information['login']."</td><td>".$array_with_query_with_all_information['password']."</td><td>".$array_with_query_with_all_information['email']."</td><td>".$array_with_query_with_all_information['birthday']."</td><td>".$array_with_query_with_all_information['sex']."</td><td>".$array_with_query_with_all_information['foots']."</td><td>".$array_with_query_with_all_information['perks']."</td><td>".$array_with_query_with_all_information['biographi']."</td><td><input type='submit' name='delete' value='Удалить'><input type='hidden' name='number_of_user' value='".$number_of_user."'></td></tr>";
+                        echo "<tr><td>".$array_with_query_with_all_information['id']."</td><td>".$array_with_query_with_all_information['name']."</td><td>".$array_with_query_with_all_information['login']."</td><td>".$array_with_query_with_all_information['password']."</td><td>".$array_with_query_with_all_information['email']."</td><td>".$array_with_query_with_all_information['birthday']."</td><td>".$array_with_query_with_all_information['sex']."</td><td>".$array_with_query_with_all_information['foots']."</td><td>".$array_with_query_with_all_information['perks']."</td><td>".$array_with_query_with_all_information['biographi']."</td><td><input type='submit' name='delete' value='Удалить'><input type='hidden' name='number_of_user' value='".$array_with_query_with_all_information['id']."'></td></tr>";
                     }
                     while($array_with_query_with_all_information = mysqli_fetch_array($query_with_all_information));?>
                     </tbody>
